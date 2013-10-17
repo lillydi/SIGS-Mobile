@@ -20,6 +20,7 @@ public class InternetReceiver extends BroadcastReceiver {
 			context.startActivity(it);
 		} else {
 			context.startActivity(main);
+		
 		}
 	}
 }
