@@ -8,9 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 
 public class InternetReceiver extends BroadcastReceiver {
-	public InternetReceiver() {
-	}
-
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO: This method is called when the BroadcastReceiver is receiving
@@ -23,8 +20,6 @@ public class InternetReceiver extends BroadcastReceiver {
 			context.startActivity(it);
 		} else {
 			context.startActivity(main);
-		
+		}
 	}
-		throw new UnsupportedOperationException("Not yet implemented");
-}
 }

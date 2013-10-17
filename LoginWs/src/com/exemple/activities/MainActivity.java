@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					
-					String url = "http://192.168.0.51/WsAuth/server.php";
+					String url = "http://192.168.247.51/WsAuth/server.php";
 					
 					SoapObject soap = new SoapObject("urn:WsAuth", "Auth");
 					
