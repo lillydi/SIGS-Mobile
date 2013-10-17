@@ -19,6 +19,7 @@ public class InternetReceiver extends BroadcastReceiver {
 		it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		if (!AndroidUtils.verificaConexao(context)) {
 			Log.i("InternetReceiver", "SEM INTERNET!");
+			
 			context.startActivity(it);
 		} else {
 			Log.i("InternetReceiver", "COM INTERNET!");
