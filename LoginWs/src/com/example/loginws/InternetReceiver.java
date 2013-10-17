@@ -1,11 +1,12 @@
 package com.example.loginws;
 
-import com.exemple.activities.InternetDesativada;
-import com.exemple.activities.MainActivity;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+
+import com.exemple.activities.InternetDesativada;
+import com.exemple.activities.MainActivity;
 
 public class InternetReceiver extends BroadcastReceiver {
 	@Override
@@ -17,8 +18,10 @@ public class InternetReceiver extends BroadcastReceiver {
 		main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		if (!AndroidUtils.verificaConexao(context)) {
+			Log.i("InternetReceiver", "SEM INTERNET!");
 			context.startActivity(it);
 		} else {
+			Log.i("InternetReceiver", "COM INTERNET!");
 			context.startActivity(main);
 		
 		}

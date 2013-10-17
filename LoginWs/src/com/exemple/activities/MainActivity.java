@@ -31,10 +31,9 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-			
 		
 			setContentView(R.layout.activity_main);
-			final Intent i = new Intent(this, InicialActivity.class);
+			final Intent i = new Intent(this, NewUserActivity.class);
 			usuario = (EditText) findViewById(R.id.usuario);
 			//String password = DigestUtils.sha1Hex((String) findViewById(R.id.senha).toString());
 			senha = (EditText) findViewById(R.id.senha);
@@ -48,6 +47,7 @@ public class MainActivity extends Activity {
 					String url = "http://192.168.247.51/WsAuth/server.php";
 					
 					SoapObject soap = new SoapObject("urn:WsAuth", "Auth");
+					
 					
 					soap.addProperty("login", usuario.getText().toString());
 					try {
@@ -71,10 +71,10 @@ public class MainActivity extends Activity {
 					Log.i("loginWs", "Passou1..." + url);
 					try {
 						httpTransport.call("", envelope);
-						Log.i("loginWs", "Passou2..." + url);
+						//Log.i("loginWs", "Passou2..." + url);
 						Object msg = envelope.getResponse();
-						Log.i("loginWs", "Passou3..." + url);
-						Log.i("loginWs", "Resposta: " + msg);
+					//	Log.i("loginWs", "Passou3..." + url);
+					//	Log.i("loginWs", "Resposta: " + msg);
 						
 						//TextView t = (TextView)findViewById(R.id.teste);
 						//t.setText(msg.toString() + "\nAutenticado!");
