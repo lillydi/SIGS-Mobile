@@ -68,12 +68,12 @@ public class MainActivity extends Activity {
 					Log.i("loginWs", "Chamando Webservice..." + url);
 					
 					HttpTransportSE httpTransport = new HttpTransportSE(url);
-					
+					Log.i("loginWs", "Passou1..." + url);
 					try {
 						httpTransport.call("", envelope);
-						
+						Log.i("loginWs", "Passou2..." + url);
 						Object msg = envelope.getResponse();
-						
+						Log.i("loginWs", "Passou3..." + url);
 						Log.i("loginWs", "Resposta: " + msg);
 						
 						//TextView t = (TextView)findViewById(R.id.teste);
