@@ -76,10 +76,12 @@ public class MainActivity extends Activity {
 					//	Log.i("loginWs", "Passou3..." + url);
 						Log.i("loginWs", "Webservice executado!! Resposta: " + msg);
 						
-						//TextView t = (TextView)findViewById(R.id.teste);
-						//t.setText(msg.toString() + "\nAutenticado!");
-						
-						startActivity(i);
+						if (msg.equals("OK")) {
+							startActivity(i);
+						} else {
+							TextView t = (TextView)findViewById(R.id.teste);
+							t.setText(msg.toString());							
+						}
 					}
 					catch (IOException ex) {
 						System.out.println(ex.getMessage());
