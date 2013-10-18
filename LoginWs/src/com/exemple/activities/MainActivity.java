@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 						//Log.i("loginWs", "Passou2..." + url);
 						Object msg = envelope.getResponse();
 					//	Log.i("loginWs", "Passou3..." + url);
-					//	Log.i("loginWs", "Resposta: " + msg);
+						Log.i("loginWs", "Webservice executado!! Resposta: " + msg);
 						
 						//TextView t = (TextView)findViewById(R.id.teste);
 						//t.setText(msg.toString() + "\nAutenticado!");
