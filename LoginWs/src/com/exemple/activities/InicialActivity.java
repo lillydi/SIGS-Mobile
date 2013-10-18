@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-
+import android.widget.EditText;
 import com.example.loginws.AndroidUtils;
 import com.example.loginws.R;
 
@@ -15,7 +15,10 @@ public class InicialActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_inicial);
 		Intent it;
-		//sendBroadcast(new Intent(CONNECTIVITY_SERVICE));
+		
+		EditText usuario = (EditText) findViewById(R.id.usuario);
+		EditText senha = (EditText) findViewById(R.id.senha);
+		
 		if (!AndroidUtils.verificaConexao(this)) {
 			it = new Intent(this, InternetDesativada.class);
 			startActivity(it);
