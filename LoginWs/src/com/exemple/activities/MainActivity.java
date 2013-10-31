@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				
 				String url = "http://192.168.0.113/WsAuth/server.php";
-				
+				//execute(url, usuario, senha)
 				SoapObject soap = new SoapObject("urn:WsAuth", "Auth");
 				
 				soap.addProperty("login", usuario.getText().toString());
@@ -141,8 +141,8 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		
-		// Cria o intent filter e registra o receiver que irá tratar esta
-        // notificação
+		// Cria o intent filter e registra o receiver que irï¿½ tratar esta
+        // notificaï¿½ï¿½o
 		
 		IntentFilter intentFilter = new IntentFilter();
 		
@@ -154,7 +154,7 @@ public class MainActivity extends Activity {
 	protected void onPause() {
 		super.onPause();
 		
-		// Remove a notificação, pois ela só é necessária quando a activity está
+		// Remove a notificaï¿½ï¿½o, pois ela sï¿½ ï¿½ necessï¿½ria quando a activity estï¿½
         // no topo da pilha
 		
 		unregisterReceiver(connectivityReceiver);

@@ -3,9 +3,9 @@ package com.example.loginws;
 import java.sql.Date;
 
 public class Familia {
-	private int id;
+	private long id;
 	private String nome_titular;
-	private Date data_nascimento_titular;
+	private String data_nascimento_titular;
 	private String endereco;
 	private String telefone_titular;
 	private String CEP;
@@ -13,12 +13,25 @@ public class Familia {
 	private String rg_titular;
 	private String cpf_titular;
 	private Boolean lock;
-	private String localizacao;
+	private Double lon;
+	private Double lat;
 	
-	public int getId() {
+	public Double getLon() {
+		return lon;
+	}
+	public void setLon(Double lon) {
+		this.lon = lon;
+	}
+	public Double getLat() {
+		return lat;
+	}
+	public void setLat(Double lat) {
+		this.lat = lat;
+	}
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNome_titular() {
@@ -27,10 +40,10 @@ public class Familia {
 	public void setNome_titular(String nome_titular) {
 		this.nome_titular = nome_titular;
 	}
-	public Date getData_nascimento_titular() {
+	public String getData_nascimento_titular() {
 		return data_nascimento_titular;
 	}
-	public void setData_nascimento_titular(Date data_nascimento_titular) {
+	public void setData_nascimento_titular(String data_nascimento_titular) {
 		this.data_nascimento_titular = data_nascimento_titular;
 	}
 	public String getEndereco() {
@@ -74,12 +87,6 @@ public class Familia {
 	}
 	public void setLock(Boolean lock) {
 		this.lock = lock;
-	}
-	public String getLocalizacao() {
-		return localizacao;
-	}
-	public void setLocalizacao(String localizacao) {
-		this.localizacao = localizacao;
 	}
 
 }
