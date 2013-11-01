@@ -10,5 +10,22 @@
     <string name="title_activity_inicial">InicialActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_new_user">NewUserActivity</string>
+    <string name="title_activity_opcao">OpcaoActivity</string>
+    <string name="cadastrarOpt">Cadastrar Família</string>
+    <string name="listarOpt">Listar Famílias</string>
+    <string name="title_activity_listar_familia">ListarFamiliaActivity</string>
+    <string name="labelFamiliasCadastradas">Famílias Cadastradas:</string>
+    <string name="title_activity_cadastrar_familia">CadastrarFamiliaActivity</string>
+    <string name="formNovaFamilia">Preencha os dados da nova família:</string>
+    <string name="labelNomeTitular">Nome:</string>
+    <string name="labelRgTitular">RG:</string>
+    <string name="labelCpfTitular">CPF:</string>
+    <string name="labelDataNascTitular">Data de Nascimento:</string>
+    <string name="labelEnderecoTitular">Endereço:</string>
+    <string name="labelTelefoneTitular">Telefone:</string>
+    <string name="labelCepTitular">CEP:</string>
+    <string name="labelBairroTitular">Bairro:</string>
+    <string name="buttonCadastrar">Cadastrar</string>
+      <string name="buscarOpt">Buscar Famílias</string>
 
 </resources>

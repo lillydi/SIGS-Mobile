@@ -8,18 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.loginws.FamiliaDAO;
 import com.example.loginws.R;
-import com.example.loginws.UsersDAO;
 
 public class NewUserActivity extends Activity {
 
-	private UsersDAO dao;
+	private FamiliaDAO dao;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_user);
-		dao = new UsersDAO(this);
+		dao = new FamiliaDAO(this);
 		dao.open();
 		
 		Button save = (Button)findViewById(R.id.buttonSave);
@@ -34,7 +34,7 @@ public class NewUserActivity extends Activity {
 				// TODO Auto-generated method stub
 				String usuario = user.getEditableText().toString();
 				String senha = pwd.getEditableText().toString();
-				dao.create(usuario, senha);
+				//dao.create(usuario, senha);
 				finish();
 				Log.i("SQLite", "Provavelmente gravou!");
 				

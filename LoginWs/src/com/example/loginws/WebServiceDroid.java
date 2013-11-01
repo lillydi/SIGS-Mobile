@@ -1,11 +1,9 @@
 package com.example.loginws;
 
-import java.io.ByteArrayOutputStream;
+
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -15,11 +13,15 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.TextView;
 
-public class WebServiceDroid extends AsyncTask<String, String, ArrayList<String>> {
+import com.exemple.activities.InternetDesativada;
+import com.exemple.activities.NewUserActivity;
+import com.exemple.activities.OpcaoActivity;
+
+public class WebServiceDroid extends AsyncTask<String, String, String> {
 	 
     private ProgressDialog progress;
     private Context context;
@@ -37,13 +39,14 @@ public class WebServiceDroid extends AsyncTask<String, String, ArrayList<String>
     }
 
     @Override
-    protected ArrayList<String> doInBackground(String... paramss) {
+    protected String doInBackground(String... paramss) {
        String url = paramss[0];
+       Log.i("Teste", "Teste 1 dentro async"+paramss[0]);
 		SoapObject soap = new SoapObject("urn:WsAuth", "Auth");
 		
 		soap.addProperty("login", paramss[1]);
 		try {
-			soap.addProperty("senha", AndroidUtils.SHA1(paramss[2]);
+			soap.addProperty("senha", AndroidUtils.SHA1(paramss[2]));
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,20 +63,23 @@ public class WebServiceDroid extends AsyncTask<String, String, ArrayList<String>
 		Log.i("loginWs", "Chamando Webservice..." + url);
 		
 		HttpTransportSE httpTransport = new HttpTransportSE(url);
-		Log.i("loginWs", "Passou1..." + url);
+		//Log.i("loginWs", "Passou1..." + url);
 		try {
+			
 			httpTransport.call("", envelope);
-			//Log.i("loginWs", "Passou2..." + url);
+			Log.i("loginWs", "Passou2..." + url);
 			Object msg = envelope.getResponse();
 			//Log.i("loginWs", "Passou3..." + url);
-			Log.i("loginWs", "Webservice executado!! Resposta: " + msg);
-			
-			if (msg.equals("OK")) {
-				startActivity(i);
+			//Log.i("loginWs", "Webservice executado!! Resposta: " + msg.toString());
+			//Log.i("Teste", "Teste resultado servidor " +msg.toString());
+			if (msg.equals("ok")) {
+				 return "ok";
 			} else {
-				TextView t = (TextView)findViewById(R.id.teste);
-				t.setText(msg.toString());							
+				//TextView t = (TextView)findViewById(R.id.teste);
+				//t.setText(msg.toString());
+				return "fail";
 			}
+			
 		}
 		catch (IOException ex) {
 			System.out.println(ex.getMessage());
@@ -81,20 +87,22 @@ public class WebServiceDroid extends AsyncTask<String, String, ArrayList<String>
 		catch (XmlPullParserException ex) {
 			System.out.println(ex.getMessage());
 		}
-		
+		return "fail";
     }
 
     @Override
-    protected void onPostExecute(ArrayList<String> result) {
+    protected void onPostExecute(String result) {
         //Cancela progressDialogo
-    	String texto = "categorias: ";
-        progress.dismiss();
-        TextView  t = new TextView(context);
-        t= (TextView)findViewById(R.id.test);
-        for(int i = 0; i < result.size();i++){
-        	texto = texto + result.get(i);
-        }
-        t.setText(texto);
+    	  progress.dismiss();
+    	final Intent telaOpcao = new Intent(context, OpcaoActivity.class);
+    	final Intent telaInternetDesativada = new Intent(context, InternetDesativada.class);
+    	if (result.equals("ok")) {
+			//return "ok";
+    		context.startActivity(telaOpcao);
+		} else {
+			context.startActivity(telaInternetDesativada);
+		}
+    	
     }
 
     @Override
@@ -102,15 +110,4 @@ public class WebServiceDroid extends AsyncTask<String, String, ArrayList<String>
         //Atualiza mensagem
         progress.setMessage(values[0]);
     }
-    private String toString(InputStream is) throws IOException { 
-    	byte[] bytes = new byte[1024]; 
-    	ByteArrayOutputStream baos = new ByteArrayOutputStream(); 
-    	int lidos; 
-    	while ((lidos = is.read(bytes)) > 0) { 
-    		baos.write(bytes, 0, lidos); 
-    		}
-    	return new String(baos.toByteArray()); 
-    	}
-
-
 }

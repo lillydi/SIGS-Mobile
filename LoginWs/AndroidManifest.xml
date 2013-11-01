@@ -18,26 +18,40 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.exemple.activities.MainActivity"
-            android:launchMode="singleTop"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity 
+        <activity
             android:name="com.exemple.activities.InternetDesativada"
             android:launchMode="singleInstance" />
-
         <activity
             android:name="com.exemple.activities.InicialActivity"
-            android:launchMode="singleInstance"
-            android:label="@string/title_activity_inicial" />
-        
+            android:label="@string/title_activity_inicial"
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.exemple.activities.NewUserActivity"
             android:label="@string/title_activity_new_user" >
+        </activity>
+        <activity
+            android:name="com.exemple.activities.OpcaoActivity"
+            android:label="@string/title_activity_opcao" >
+        </activity>
+        <activity
+            android:name="com.exemple.activities.ListarFamiliaActivity"
+            android:label="@string/title_activity_listar_familia"
+            android:parentActivityName="android.app.ListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.app.ListActivity" />
+        </activity>
+        <activity
+            android:name="com.exemple.activities.CadastrarFamiliaActivity"
+            android:label="@string/title_activity_cadastrar_familia" >
         </activity>
     </application>
 
