@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CadastrarFamiliaActivity" >
+
+    <TextView
+        android:id="@+id/formNovaFamilia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:text="@string/formNovaFamilia" />
+
+    <TextView
+        android:id="@+id/labelNomeTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/formNovaFamilia"
+        android:layout_marginTop="28dp"
+        android:text="@string/labelNomeTitular" />
+    
+     <EditText
+        android:id="@+id/nomeTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelNomeTitular"
+        android:layout_alignBottom="@+id/labelNomeTitular"
+        android:layout_toRightOf="@+id/formNovaFamilia"
+        android:ems="10"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/labelRgTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/labelNomeTitular"
+        android:layout_below="@+id/labelNomeTitular"
+        android:layout_marginTop="20dp"
+        android:text="@string/labelRgTitular" />
+    
+     <EditText
+        android:id="@+id/rgTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelRgTitular"
+        android:layout_alignBottom="@+id/labelRgTitular"
+        android:layout_alignLeft="@+id/nomeTitular"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/labelCpfTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/labelRgTitular"
+        android:layout_below="@+id/labelRgTitular"
+        android:layout_marginTop="20dp"
+        android:text="@string/labelCpfTitular" />
+    
+     <EditText
+        android:id="@+id/cpfTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelCpfTitular"
+        android:layout_alignBottom="@+id/labelCpfTitular"
+        android:layout_alignLeft="@+id/rgTitular"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/labelDataNascTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelCpfTitular"
+        android:layout_marginTop="20dp"
+        android:text="@string/labelDataNascTitular" />
+    
+      <EditText
+        android:id="@+id/dataNascTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelDataNascTitular"
+        android:layout_alignBottom="@+id/labelDataNascTitular"
+        android:layout_toRightOf="@+id/formNovaFamilia"
+        android:ems="10"
+        android:inputType="date" />
+    
+        <EditText
+        android:id="@+id/telefoneTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelTelefoneTitular"
+        android:layout_alignBottom="@+id/labelTelefoneTitular"
+        android:layout_toRightOf="@+id/formNovaFamilia"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/labelCepTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/labelTelefoneTitular"
+        android:layout_below="@+id/labelTelefoneTitular"
+        android:layout_marginTop="20dp"
+        android:text="@string/labelCepTitular" />
+
+      <EditText
+        android:id="@+id/cepTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelCepTitular"
+        android:layout_alignBottom="@+id/labelCepTitular"
+        android:layout_alignLeft="@+id/telefoneTitular"
+        android:ems="10"
+        android:inputType="number" />
+    
+    <TextView
+        android:id="@+id/labelEnderecoTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelCepTitular"
+        android:layout_marginTop="20dp"
+        android:text="@string/labelEnderecoTitular" />
+    
+     <EditText
+        android:id="@+id/enderecoTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelEnderecoTitular"
+        android:layout_alignBottom="@+id/labelEnderecoTitular"
+        android:layout_toRightOf="@+id/formNovaFamilia"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/labelBairroTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/labelEnderecoTitular"
+        android:layout_below="@+id/labelEnderecoTitular"
+        android:layout_marginTop="20dp"
+        android:text="@string/labelBairroTitular" />
+
+    <EditText
+        android:id="@+id/bairroTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelBairroTitular"
+        android:layout_alignBottom="@+id/labelBairroTitular"
+        android:layout_alignLeft="@+id/enderecoTitular"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/labelTelefoneTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/labelDataNascTitular"
+        android:layout_centerVertical="true"
+        android:text="@string/labelTelefoneTitular" />
+
+    <Button
+        android:id="@+id/buttonCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="@string/buttonCadastrar" />
+
+</RelativeLayout>

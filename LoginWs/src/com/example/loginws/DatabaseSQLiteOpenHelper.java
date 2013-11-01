@@ -26,16 +26,16 @@ public class DatabaseSQLiteOpenHelper extends SQLiteOpenHelper {
 	public static final String DATABASE_CREATION = "create table "+ TABLE_FAMILIA + "(" + 
 			COLUMN_ID + " integer primary key autoincrement, " + 
 			COLUMN_NOME + " varchar not null, " + 
-			COLUMN_DATA + " date not null, " +
+			COLUMN_DATA + " varchar not null, " +
 			COLUMN_ENDERECO+ " varchar not null, " +
 			COLUMN_TELEFONE + " varchar not null, " +
 			COLUMN_CEP + " varchar not null, " +
 			COLUMN_BAIRRO + " varchar not null, " +
 			COLUMN_RG + " varchar not null, " +
 			COLUMN_CPF + " varchar not null, " +
-			COLUMN_LOCK + " bool not null, " +
-			COLUMN_LON + " double not null ," +
-			COLUMN_LAT + " double not null " +
+			COLUMN_LOCK + " varchar  null, " +
+			COLUMN_LON + " double  null ," +
+			COLUMN_LAT + " double  null " +
 			");";
 
 	public DatabaseSQLiteOpenHelper(Context context) {

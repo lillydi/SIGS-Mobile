@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".OpcaoActivity" >
+
+    <Button
+        android:id="@+id/cadastrarOpt"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:text="@string/cadastrarOpt" />
+
+    <Button
+        android:id="@+id/listarOpt"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/cadastrarOpt"
+        android:layout_centerVertical="true"
+        android:text="@string/listarOpt" />
+
+    <Button
+        android:id="@+id/buscarOpt"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/listarOpt"
+        android:layout_below="@+id/listarOpt"
+        android:layout_marginTop="26dp"
+        android:text="@string/buscarOpt" />
+
+</RelativeLayout>

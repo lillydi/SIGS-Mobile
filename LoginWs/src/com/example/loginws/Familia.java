@@ -16,6 +16,24 @@ public class Familia {
 	private Double lon;
 	private Double lat;
 	
+	public Familia(Long id, String nome, String rg, String cpf, String data, String telefone, 
+			String cep, String endereco, String bairro, Double lat, Double longi){
+		this.id = id;
+		nome_titular = nome;
+		rg_titular = rg;
+		cpf_titular = cpf;
+		data_nascimento_titular = data;
+		telefone_titular = telefone;
+		CEP = cep;
+		this.endereco = endereco;
+		this.bairro = bairro;	
+		this.lat = lat;
+		lon = longi;
+	}
+	public Familia(){
+		
+	}
+	
 	public Double getLon() {
 		return lon;
 	}
