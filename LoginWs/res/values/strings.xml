@@ -26,6 +26,6 @@
     <string name="labelCepTitular">CEP:</string>
     <string name="labelBairroTitular">Bairro:</string>
     <string name="buttonCadastrar">Cadastrar</string>
-      <string name="buscarOpt">Buscar Famílias</string>
+    <string name="buscarOpt">Buscar Famílias</string>
 
 </resources>

@@ -53,6 +53,7 @@
             android:name="com.exemple.activities.CadastrarFamiliaActivity"
             android:label="@string/title_activity_cadastrar_familia" >
         </activity>
+
     </application>
 
 </manifest>
