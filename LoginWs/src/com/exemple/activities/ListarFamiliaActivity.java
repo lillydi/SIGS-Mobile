@@ -1,24 +1,39 @@
 package com.exemple.activities;
 
+import java.util.List;
+
+import com.example.loginws.Familia;
+import com.example.loginws.FamiliaDAO;
 import com.example.loginws.R;
 import com.example.loginws.R.layout;
 import com.example.loginws.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.ListActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
 
-public class ListarFamiliaActivity extends Activity {
+public class ListarFamiliaActivity extends ListActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_listar_familia);
 		// Show the Up button in the action bar.
+		FamiliaDAO familia = new FamiliaDAO(this);
+		familia.open();
+		List<Familia> listFamilia = familia.listar();
+		ArrayAdapter<Familia> adapter = new ArrayAdapter<Familia>(this, android.R.layout.simple_list_item_1,listFamilia);
+		setListAdapter(adapter);
+		
+		
+		
+		
 		setupActionBar();
 	}
 
