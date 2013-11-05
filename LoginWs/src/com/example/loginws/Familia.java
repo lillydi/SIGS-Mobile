@@ -1,7 +1,5 @@
 package com.example.loginws;
 
-/* Teste 6 */
-
 import java.sql.Date;
 
 public class Familia {
