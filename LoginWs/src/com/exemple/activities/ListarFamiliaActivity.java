@@ -31,7 +31,9 @@ public class ListarFamiliaActivity extends ListActivity {
 		List<Familia> listFamilia = familia.listar();
 		ArrayList<String> list = new ArrayList<String>();
 		for (int i = 0; i < listFamilia.size(); i++) {
-			list.add(listFamilia.get(i).getNome_titular()+" - "+listFamilia.get(i).getCpf_titular());
+			list.add(listFamilia.get(i).getId()+" - "+ listFamilia.get(i).getNome_titular()+" - "
+		+listFamilia.get(i).getCpf_titular()
+		+"\n LAT: "+ listFamilia.get(i).getLat()+"  / LON: "+listFamilia.get(i).getLon());
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
 		setListAdapter(adapter);

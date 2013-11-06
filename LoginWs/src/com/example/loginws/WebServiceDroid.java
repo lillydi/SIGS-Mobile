@@ -83,6 +83,7 @@ public class WebServiceDroid extends AsyncTask<String, String, String> {
 		}
 		catch (IOException ex) {
 			System.out.println(ex.getMessage());
+			Log.i("loginWs", "Catch  " + ex.getMessage());
 		}
 		catch (XmlPullParserException ex) {
 			System.out.println(ex.getMessage());
