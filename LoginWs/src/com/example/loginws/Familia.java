@@ -3,7 +3,7 @@ package com.example.loginws;
 import java.sql.Date;
 
 public class Familia {
-	private long id;
+	private Long id;
 	private String nome_titular;
 	private String data_nascimento_titular;
 	private String endereco;
@@ -46,10 +46,10 @@ public class Familia {
 	public void setLat(Double lat) {
 		this.lat = lat;
 	}
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome_titular() {
@@ -105,6 +105,11 @@ public class Familia {
 	}
 	public void setLock(Boolean lock) {
 		this.lock = lock;
+	}
+	public String mostrarFamilia() {
+		return "" + id + " - " + nome_titular + " - " + data_nascimento_titular + " - " + 
+				endereco + " - " + telefone_titular + " - " + CEP + " - " + bairro + " - " + 
+				rg_titular + " - " + cpf_titular + " - " + lock + " - " + lon + " - " + lat;
 	}
 
 }

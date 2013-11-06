@@ -1,21 +1,22 @@
 package com.exemple.activities;
 
-import com.example.loginws.R;
-import com.example.loginws.R.layout;
-import com.example.loginws.R.menu;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.loginws.BuscarFamilias;
+import com.example.loginws.R;
 
 public class OpcaoActivity extends Activity {
 
 	Button cadastrarFamilia;
 	Button listarFamilias;
 	Button buscarFamilias;
+	
+	BuscarFamilias WSbuscarFamilias = new BuscarFamilias(this);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,15 @@ public class OpcaoActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 			startActivity(telaListagem);	
+			}
+		});
+		
+		buscarFamilias.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				WSbuscarFamilias.execute("http://192.168.3.1/FamiliasWs/FamiliasWs.php");
 			}
 		});
 	}
