@@ -52,9 +52,9 @@ public class FamiliaDAO {
 		values.put(DatabaseSQLiteOpenHelper.COLUMN_CEP, cep);
 		values.put(DatabaseSQLiteOpenHelper.COLUMN_BAIRRO, bairro);
 		values.put(DatabaseSQLiteOpenHelper.COLUMN_LOCK, true);
-		Log.i("Dentro create", "Cheguei aqui "+values.toString());
+		Log.i("cadastrarFamilia", "Cheguei aqui "+values.toString());
 		long insertId = database.insert(DatabaseSQLiteOpenHelper.TABLE_FAMILIA, null, values);
-		Log.i("Dentro create", "Cheguei aqui");
+		Log.i("cadastrarFamilia", "Cheguei aqui");
 		Cursor cursor = database.query(DatabaseSQLiteOpenHelper.TABLE_FAMILIA, columns, 
 				DatabaseSQLiteOpenHelper.COLUMN_ID +"="+ insertId, null, null, null, null);
 		
