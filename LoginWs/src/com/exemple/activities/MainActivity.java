@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-		        processo.execute("http://10.0.0.119/WebService/server.php", usuario.getText().toString(), senha.getText().toString());
+		        processo.execute("http://10.6.125.119/WebService/server.php", usuario.getText().toString(), senha.getText().toString());
 				
 			}
 			

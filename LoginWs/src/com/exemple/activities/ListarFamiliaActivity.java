@@ -1,5 +1,6 @@
 package com.exemple.activities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.loginws.Familia;
@@ -28,7 +29,11 @@ public class ListarFamiliaActivity extends ListActivity {
 		FamiliaDAO familia = new FamiliaDAO(this);
 		familia.open();
 		List<Familia> listFamilia = familia.listar();
-		ArrayAdapter<Familia> adapter = new ArrayAdapter<Familia>(this, android.R.layout.simple_list_item_1,listFamilia);
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i = 0; i < listFamilia.size(); i++) {
+			list.add(listFamilia.get(i).getNome_titular()+" - "+listFamilia.get(i).getCpf_titular());
+		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
 		setListAdapter(adapter);
 		
 		
