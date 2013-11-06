@@ -12,9 +12,9 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.loginws.DatabaseSQLiteOpenHelper;
 import com.example.loginws.FamiliaDAO;
 import com.example.loginws.R;
 
@@ -31,6 +31,7 @@ public class CadastrarFamiliaActivity extends Activity implements LocationListen
 	EditText endereco;
 	EditText bairro;
 	Button cadastrar;
+	TextView tvLatitude, tvLongitude;
 	Double lat;
 	Double lon;
 	
@@ -101,7 +102,13 @@ public class CadastrarFamiliaActivity extends Activity implements LocationListen
 	public void onLocationChanged(Location location) {
 		// TODO Auto-generated method stub
 		this.lat = location.getLatitude();
-		this.lon = location.getLongitude();		
+		this.lon = location.getLongitude();
+		
+		tvLatitude = (TextView) findViewById(R.id.latitude);
+		tvLongitude = (TextView) findViewById(R.id.longitude);
+		
+		tvLatitude.setText("Latitude: " + String.valueOf(this.lat));
+		tvLongitude.setText("Longitude: " + String.valueOf(this.lon));
 	}
 
 	@Override

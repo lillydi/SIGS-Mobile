@@ -176,4 +176,20 @@
         android:layout_marginBottom="14dp"
         android:text="@string/buttonCadastrar" />
 
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonCadastrar"
+        android:layout_alignRight="@+id/labelEnderecoTitular"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonCadastrar"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+
 </RelativeLayout>
